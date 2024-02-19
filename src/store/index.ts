@@ -1,8 +1,11 @@
 import { createStore } from "vuex";
 import { RootState } from "./types";
+import { user } from "@/store/user";
 
 export default createStore<RootState>({
-  modules: {},
+  modules: {
+    user,
+  },
   state: { helloMessage: "Hello From Vuex" },
   mutations: {},
   actions: {},
