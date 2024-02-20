@@ -48,7 +48,8 @@ export default defineComponent({
           createdAt: new Date(),
           done: false,
         };
-        console.log(todo);
+        console.log("--------------");
+        store.dispatch("addTodo", todo);
       }
     };
 

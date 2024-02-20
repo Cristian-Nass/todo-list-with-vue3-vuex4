@@ -2,6 +2,8 @@ import { Module } from "vuex";
 import { RootState } from "@/store/types";
 import { TodoList } from "./types";
 import { getters } from "./getters";
+import { mutations } from "./mutations";
+import { actions } from "./actions";
 
 const testDate = {
   loading: false,
@@ -26,4 +28,6 @@ const state: TodoList = testDate;
 export const todo: Module<TodoList, RootState> = {
   state,
   getters,
+  mutations,
+  actions,
 };
