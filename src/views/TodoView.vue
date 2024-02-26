@@ -5,14 +5,22 @@
     <li v-for="item in getTodo.todo">
       {{ item.title }}
     </li> -->
-    <input class="input-form" type="text" name="title" ref="titleInput" />
-    <input
-      class="input-form"
-      type="text"
-      name="description"
-      ref="descriptionInput"
-    />
-    <button @click="addTodo" class="input-form">Submit</button>
+    <div class="todo-container">
+      <div style="text-align: left; flex: 1; margin: 6px">
+        <div>Title:</div>
+        <input class="input-form" type="text" name="title" ref="titleInput" />
+      </div>
+      <div style="text-align: left; flex: 1; margin: 6px">
+        <div>Description:</div>
+        <input
+          class="input-form"
+          type="text"
+          name="description"
+          ref="descriptionInput"
+        />
+      </div>
+      <button @click="addTodo" style="width: 100px; margin: 6px">Submit</button>
+    </div>
     <li v-for="item in todo.todo">
       {{ item.title }}
     </li>
@@ -48,7 +56,6 @@ export default defineComponent({
           createdAt: new Date(),
           done: false,
         };
-        console.log("--------------");
         store.dispatch("addTodo", todo);
       }
     };
@@ -64,7 +71,15 @@ export default defineComponent({
 </script>
 <style scoped>
 .input-form {
-  padding: 4px;
-  margin: 4px;
+  width: 100%;
+}
+.todo-container {
+  display: flex;
+  width: 600px;
+  background-color: rgb(128, 198, 236);
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 6px;
+  justify-content: space-evenly;
 }
 </style>
